@@ -1,0 +1,31 @@
+{
+  "name": "canvas-to-bmp",
+  "version": "1.1.0",
+  "homepage": "https://github.com/epistemex/canvas-to-bmp",
+  "authors": [
+    "epistemex <github@epistemex.com>"
+  ],
+  "description": "Converts a canvas element to BMP with alpha",
+  "main": "canvastobmp.min.js",
+  "keywords": [
+    "canvas",
+    "bmp",
+    "bitmap",
+    "file"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "tests",
+    "tuts"
+  ],
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.0",
+    "commit": "47dad078e144d798de4dd5b9a4b7828aa343cda3"
+  },
+  "_source": "https://github.com/epistemex/canvas-to-bmp.git",
+  "_target": "~1.1.0",
+  "_originalSource": "canvas-to-bmp"
+}

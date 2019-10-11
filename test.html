@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Test canvas-to-bmp</title>
+	<style>
+		body {background:#777;color:#ddd;font-family:sans-serif}
+		canvas, img {border:1px solid #000}
+	</style>
+</head>
+<body>
+	<h2>Left: Canvas, Right: BMP image via canvas-to-bmp</h2>
+	<canvas width="640" height="400"></canvas>
+<script src="canvastobmp.min.js"></script>
+<script>
+
+	var canvas = document.querySelector("canvas"),
+		ctx = canvas.getContext("2d"),
+		w = canvas.width,
+		h = canvas.height,
+		r = 50;
+
+	for(var i = 0; i < 100; i++) {
+		ctx.fillStyle = "hsl(" + (Math.random() * 360) + ", 90%, 70%)";
+		ctx.fillRect(Math.random() * (w - r), Math.random() * (h - r), r, r);
+	}
+
+	// Using Data-URI
+	/*CanvasToBMP.toDataURL(canvas, function(uri) {
+		img.onload = function() {document.body.appendChild(this)};
+		img.onerror = function() {console.log("An error occurred loading image...")};
+		img.src = uri;
+	});*/
+
+	// Using toObjectURL
+	CanvasToBMP.toObjectURL(canvas, function(url) {
+		var _URL = self.URL || self.webkitURL || self,
+			img = new Image();
+		img.onload = function() {_URL.revokeObjectURL(url); document.body.appendChild(this)};
+		img.onerror = function() {_URL.revokeObjectURL(url); console.log("An error occurred loading image...")};
+		img.src = url;
+	});
+
+</script>
+</body>
+</html>

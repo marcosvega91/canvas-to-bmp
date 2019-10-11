@@ -1,0 +1,16 @@
+Change log for CanvasToBMP
+--------------------------
+
+1.1.0 BETA
+ADD: toObjectURL convenience method
+CHG: Minor internal changes
+
+1.0.0 BETA
+CHG: All operations are now asynchronous
+CHG: Beta
+
+1.0.0 ALPHA
+First version (synchronous) released on StackOverflow:
+https://stackoverflow.com/questions/29652307/canvas-unable-to-generate-bmp-image-dataurl-in-chrome/29652507#29652507
+
+(c) Epistemex 2015

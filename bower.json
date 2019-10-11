@@ -1,0 +1,19 @@
+{
+  "name": "canvas-to-bmp",
+  "version": "1.1.0",
+  "homepage": "https://github.com/ictandmore/canvas-to-bmp",
+  "authors": [
+    "epistemex <github@epistemex.com>"
+  ],
+  "description": "Converts a canvas element to BMP with alpha",
+  "main": "canvastobmp.min.js",
+  "keywords": [
+    "canvas", "bmp", "bitmap", "file"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "tests",
+    "tuts"
+  ]
+}

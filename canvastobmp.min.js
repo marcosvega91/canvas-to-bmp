@@ -1,0 +1,7 @@
+/*
+	canvas-to-bmp version 1.1.0 BETA
+	By Epistemex (c) 2015
+	www.epistemex.com
+	MIT License (this header required)
+*/
+var CanvasToBMP={toArrayBuffer:function(f,e){var D=f.width,l=f.height,E=D<<2,m=f.getContext("2d").getImageData(0,0,D,l),i=new Uint32Array(m.data.buffer),A=((32*D+31)/32)<<2,o=A*l,k=122+o,j=new ArrayBuffer(k),C=new DataView(j),d=1<<20,c=d,G=0,F,B,b,q=0,n,r=0;u(19778);z(k);t(4);z(122);z(108);z(D);z(-l>>>0);u(1);u(32);z(3);z(o);z(2835);z(2835);t(8);z(16711680);z(65280);z(255);z(4278190080);z(1466527264);(function g(){while(G<l&&c>0){n=122+G*A;F=0;while(F<E){c--;B=i[r++];b=B>>>24;C.setUint32(n+F,(B<<8)|b);F+=4}G++}if(r<i.length){c=d;setTimeout(g,CanvasToBMP._dly)}else{e(j)}})();function u(a){C.setUint16(q,a,!0);q+=2}function z(a){C.setUint32(q,a,!0);q+=4}function t(a){q+=a}},toBlob:function(b,a){this.toArrayBuffer(b,function(c){a(new Blob([c],{type:"image/bmp"}))})},toObjectURL:function(b,a){this.toBlob(b,function(c){var d=self.URL||self.webkitURL||self;a(d.createObjectURL(c))})},toDataURL:function(b,a){this.toArrayBuffer(b,function(h){var g=new Uint8Array(h),e=1<<20,d=e,f="",c="",j=0,k=g.length;(function m(){while(j<k&&d-->0){f+=String.fromCharCode(g[j++])}if(j<k){d=e;setTimeout(m,CanvasToBMP._dly)}else{j=0;k=f.length;d=180000;(function i(){c+=btoa(f.substr(j,d));j+=d;(j<k)?setTimeout(i,CanvasToBMP._dly):a("data:image/bmp;base64,"+c)})()}})()})}};CanvasToBMP._dly=9;
